@@ -17,6 +17,10 @@ const Platform = {
     }
     return false;
   }
+
+  get isTV(): boolean {
+    return process.env.REACT_APP_IS_TV === 'true';
+  }
 };
 
 export default Platform;

@@ -1,6 +1,6 @@
 /**
  * Copyright (c) Nicolas Gallagher.
- * Copyright (c) Meta Platforms, Inc. and affiliates.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -12,9 +12,19 @@ function emptyFunction() {}
 
 const BackHandler = {
   exitApp: emptyFunction,
-  addEventListener(): {| remove: () => void |} {
+  /**
+   * Listen to "hardwareBackPress" event
+   *
+   * @param event
+   * @param callback
+   * @returns {{remove: remove}}
+   */
+  addEventListener(event: string, callback: Function) {
+    document.addEventListener(event, callback);
     return {
-      remove: emptyFunction
+      remove: () => {
+        document.removeEventListener(event, callback);
+      }
     };
   },
   removeEventListener: emptyFunction

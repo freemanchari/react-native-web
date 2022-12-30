@@ -23,6 +23,7 @@ import useResponderEvents from '../../modules/useResponderEvents';
 import { getLocaleDirection, useLocaleContext } from '../../modules/useLocale';
 import StyleSheet from '../StyleSheet';
 import TextInputState from '../../modules/TextInputState';
+import Platform from '../Platform';
 
 /**
  * Determines whether a 'selection' prop differs from a node's existing
@@ -268,8 +269,10 @@ const TextInput: React.AbstractComponent<
 
   function handleKeyDown(e) {
     const hostNode = e.target;
-    // Prevent key events bubbling (see #612)
-    e.stopPropagation();
+    if (!Platform.isTV) {
+      // Prevent key events bubbling (see #612)
+      e.stopPropagation();
+    }
 
     const blurOnSubmitDefault = !multiline;
     const shouldBlurOnSubmit =
