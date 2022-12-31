@@ -80,13 +80,25 @@ export default function useTVEvents(
     // Check nextFocus* properties
     if (hostRef.current.hasAttribute('nextFocusUp') && key === 'ArrowUp') {
       nextFocusID = hostRef.current.getAttribute('nextFocusUp');
-    } else if (hostRef.current.hasAttribute('nextFocusRight') && key === 'ArrowRight') {
+    } else if (
+      hostRef.current.hasAttribute('nextFocusRight') &&
+      key === 'ArrowRight'
+    ) {
       nextFocusID = hostRef.current.getAttribute('nextFocusRight');
-    } else if (hostRef.current.hasAttribute('nextFocusDown') && key === 'ArrowDown') {
+    } else if (
+      hostRef.current.hasAttribute('nextFocusDown') &&
+      key === 'ArrowDown'
+    ) {
       nextFocusID = hostRef.current.getAttribute('nextFocusDown');
-    } else if (hostRef.current.hasAttribute('nextFocusLeft') && key === 'ArrowLeft') {
+    } else if (
+      hostRef.current.hasAttribute('nextFocusLeft') &&
+      key === 'ArrowLeft'
+    ) {
       nextFocusID = hostRef.current.getAttribute('nextFocusLeft');
-    } else if (hostRef.current.hasAttribute('nextFocusForward') && key === 'ArrowRight') {
+    } else if (
+      hostRef.current.hasAttribute('nextFocusForward') &&
+      key === 'ArrowRight'
+    ) {
       nextFocusID = hostRef.current.getAttribute('nextFocusForward');
     }
     if (nextFocusID && nextFocusID !== '') {

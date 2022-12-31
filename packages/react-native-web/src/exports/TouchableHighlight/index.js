@@ -31,7 +31,7 @@ type Props = $ReadOnly<{|
   onShowUnderlay?: ?() => void,
   style?: ViewStyle,
   testOnly_pressed?: ?boolean,
-  underlayColor ?: ? ColorValue,
+  underlayColor?: ?ColorValue,
   underlayColor?: ?ColorValue,
   hasTVPreferredFocus?: ?boolean,
   nextFocusDown?: ?any,
@@ -202,7 +202,6 @@ function TouchableHighlight(props: Props, forwardedRef): React.Node {
   );
 
   const tvEventHandlers = useTVEvents(hostRef, tvConfig);
-
 
   const child = React.Children.only(children);
 
