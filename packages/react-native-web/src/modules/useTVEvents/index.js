@@ -142,7 +142,7 @@ export default function useTVEvents(
           TVEventHandler.dispatchEvent(tvEvent);
         },
         onKeyDown: onKeyEvent,
-        onKeyUp: onKeyEvent
+        onKeyUp: (event: Event) => {} //onKeyEvent
       }
     : {};
 
